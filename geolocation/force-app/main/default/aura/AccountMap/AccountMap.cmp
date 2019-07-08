@@ -1,0 +1,20 @@
+<!--
+  @Component Name     : AccountMap.cmp
+  @Description        : 
+  @Author             : KyleGibson
+  @Group              : 
+  @Last Modified By   : KyleGibson
+  @Last Modified On   : 2019/07/08, 11:35:08
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    2019/07/08, 11:35:08   KyleGibson     Initial Version
+-->
+<aura:component>
+    <aura:handler event="c:AccountsLoaded" action="{!c.onAccountsLoaded}"/>
+    <aura:attribute name="mapMarkers" type="Map[]"/>
+    <lightning:card title="Account Map" iconName="action:map">
+        <lightning:map mapMarkers="{!v.mapMarkers}"/>
+    </lightning:card>
+</aura:component>
