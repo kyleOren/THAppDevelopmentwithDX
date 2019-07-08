@@ -1,0 +1,28 @@
+<!--
+  @Component Name     : AccountList.cmp
+  @Description        : 
+  @Author             : KyleGibson
+  @Group              : 
+  @Last Modified By   : KyleGibson
+  @Last Modified On   : 2019/07/08, 11:32:31
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    2019/07/08, 11:32:31   KyleGibson     Initial Version
+-->
+<aura:component>
+    <aura:handler event="c:AccountsLoaded" action="{!c.onAccountsLoaded}"/>
+    <lightning:navigation aura:id="navigation"/>
+    <aura:attribute name="rows" type="Map[]"/>
+    <aura:attribute name="cols" type="Map[]"/>
+    <lightning:card title="Account List" iconName="standard:account">
+        <lightning:datatable
+            data="{!v.rows}"
+            columns="{!v.cols}"
+            keyField="Id"
+            hideCheckboxColumn="true"
+            showRowNumberColumn="true"
+            onrowaction="{!c.onRowAction}"/>
+    </lightning:card>
+</aura:component>
